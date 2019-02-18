@@ -6,7 +6,7 @@
 //
 
 import Foundation
-open class SetSteeringWheelHeaterCommandOptions: Encodable {
+open class SetSteerWheelHeatCmdOptions: Encodable {
     
     open var on: Bool?
     

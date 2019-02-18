@@ -507,7 +507,7 @@ extension TeslaSwift {
 					let body = SpeedLimitPinOptions(pin: pin)
 					return self.request(Endpoint.command(vehicleID: vehicle.id!, command: command), body: body)
                 case let .setSteeringWheelHeater(on):
-                    let body = SetSteeringWheelHeaterCommandOptions(on: on)
+                    let body = SetSteerWheelHeatCmdOptions(on: on)
                     return self.request(Endpoint.command(vehicleID: vehicle.id!, command: command), body: body)
                 default:
 					return self.request(Endpoint.command(vehicleID: vehicle.id!, command: command), body: nullBody)
