@@ -48,6 +48,7 @@ public enum VehicleCommand {
 	case speedLimitActivate(pin: String)
 	case speedLimitDeactivate(pin: String)
 	case speedLimitClearPin(pin: String)
+    case setSeatHeater(heater: Int, level: Int)
 	
 	func path() -> String {
 		switch self {
@@ -115,7 +116,9 @@ public enum VehicleCommand {
 			return "command/speed_limit_deactivate"
 		case .speedLimitClearPin:
 			return "command/speed_limit_clear_pin"
-		}
+        case .setSeatHeater:
+            return "command/remote_seat_heater_request"
+        }
 	}
 }
 
@@ -485,7 +488,7 @@ extension TeslaSwift {
 				case let .setTemperature(driverTemperature, passengerTemperature):
 					let body = SetTemperatureCommandOptions(driverTemperature: driverTemperature, passengerTemperature: passengerTemperature)
 					return self.request(Endpoint.command(vehicleID: vehicle.id!, command: command), body: body)
-				case let .setSunRoof(state, percent):
+                case let .setSunRoof(state, percent):
 					let body = SetSunRoofCommandOptions(state: state, percent: percent)
 					return self.request(Endpoint.command(vehicleID: vehicle.id!, command: command), body: body)
 				case let .startVehicle(password):
@@ -503,7 +506,10 @@ extension TeslaSwift {
 				case let .speedLimitClearPin(pin):
 					let body = SpeedLimitPinOptions(pin: pin)
 					return self.request(Endpoint.command(vehicleID: vehicle.id!, command: command), body: body)
-				default:
+                case let .setSeatHeater(heater, level):
+                    let body = SetSeatHeaterCommandOptions(heater: heater, level: level)
+                    return self.request(Endpoint.command(vehicleID: vehicle.id!, command: command), body: body)
+                default:
 					return self.request(Endpoint.command(vehicleID: vehicle.id!, command: command), body: nullBody)
 				}
 		
