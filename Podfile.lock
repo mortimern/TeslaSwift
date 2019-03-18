@@ -22,7 +22,7 @@ DEPENDENCIES:
   - PromiseKit/CorePromise (~> 6)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - OHHTTPStubs
     - PromiseKit
 
@@ -30,6 +30,6 @@ SPEC CHECKSUMS:
   OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
   PromiseKit: 625b1fc69944fc839503748101c5968cf54b527b
 
-PODFILE CHECKSUM: 81e5f78d7f8413ddd9dc32257ea0380978d7ea54
+PODFILE CHECKSUM: 5f6cc349d0fb1ae1747a82cc3db6963ca0ae2f7b
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.0
