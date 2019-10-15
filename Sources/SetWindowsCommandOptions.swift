@@ -10,8 +10,12 @@ import Foundation
 open class SetWindowsCommandOptions: Encodable {
 
     open var state: WindowState
-    init(state: WindowState) {
+    open var lon: Int?
+    open var lat: Int?
+    init(state: WindowState, lon: Int?, lat: Int?) {
         self.state = state
+        self.lon = lon
+        self.lat = lat
     }
     
 }

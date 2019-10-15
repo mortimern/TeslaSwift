@@ -32,7 +32,7 @@ public enum VehicleCommand {
 	case startAutoConditioning
 	case stopAutoConditioning
 	case setSunRoof(state: RoofState, percentage: Int?)
-	case setWindows(state: WindowState)
+	case setWindows(state: WindowState, lon: Int?, lat: Int?)
     case startVehicle(password: String)
 	case openTrunk(options: OpenTrunkOptions)
 	case togglePlayback
@@ -497,8 +497,8 @@ extension TeslaSwift {
 				case let .setSunRoof(state, percent):
 					let body = SetSunRoofCommandOptions(state: state, percent: percent)
 					return self.request(Endpoint.command(vehicleID: vehicle.id!, command: command), body: body)
-				case let .setWindows(state):
-                    let body = SetWindowsCommandOptions(state: state)
+				case let .setWindows(state, lon, lat):
+                    let body = SetWindowsCommandOptions(state: state, lon: lon, lat: lat)
                     return self.request(Endpoint.command(vehicleID: vehicle.id!, command: command), body: body)
                 case let .startVehicle(password):
 					let body = RemoteStartDriveCommandOptions(password: password)
