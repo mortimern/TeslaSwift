@@ -592,7 +592,11 @@ extension TeslaSwift {
 					if let data = data {
 						let objectString = String.init(data: data, encoding: String.Encoding.utf8) ?? "No Body"
 						logDebug("RESPONSE BODY: \(objectString)\n", debuggingEnabled: debugEnabled)
-						
+                        if objectString.contains("option_codes") && objectString.contains("vehicle_config") {
+                            UserDefaults.standard.set("RESPONSE BODY: \(objectString)\n", forKey: "JSONResponse")
+                            UserDefaults.standard.synchronize()
+                        }
+                        
 						let mapped = try teslaJSONDecoder.decode(ReturnType.self, from: data)
 						seal.fulfill(mapped)
 					}
@@ -607,7 +611,7 @@ extension TeslaSwift {
 					let objectString = String.init(data: data, encoding: String.Encoding.utf8) ?? "No Body"
 					logDebug("RESPONSE BODY ERROR: \(objectString)\n", debuggingEnabled: debugEnabled)
 					
-					if let wwwauthenticate = httpResponse.allHeaderFields["Www-Authenticate"] as? String,
+					if let wwwauthenticate = httpResponse.allHeaderFields["www-Authenticate"] as? String,
 						wwwauthenticate.contains("invalid_token") {
 						seal.reject(TeslaError.tokenRevoked)
 					} else if let mapped = try? teslaJSONDecoder.decode(ErrorMessage.self, from: data) {
@@ -617,7 +621,7 @@ extension TeslaSwift {
 					}
 					
 				} else {
-					if let wwwauthenticate = httpResponse.allHeaderFields["Www-Authenticate"] as? String {
+					if let wwwauthenticate = httpResponse.allHeaderFields["www-Authenticate"] as? String {
 						if wwwauthenticate.contains("invalid_token") {
 							seal.reject(TeslaError.authenticationFailed)
 						}
