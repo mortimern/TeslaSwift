@@ -15,6 +15,7 @@
 		1787516D221C393700B840DD /* RemoteSteeringWheelHeaterRequestOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1787516C221C393700B840DD /* RemoteSteeringWheelHeaterRequestOptions.swift */; };
 		17875171221C4C7700B840DD /* RemoteSteeringWheelHeaterRequestOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1787516C221C393700B840DD /* RemoteSteeringWheelHeaterRequestOptions.swift */; };
 		17875172221C4C7800B840DD /* RemoteSteeringWheelHeaterRequestOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1787516C221C393700B840DD /* RemoteSteeringWheelHeaterRequestOptions.swift */; };
+		598392242355C18D007B5F7D /* SetHomeLinkCommandOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598392232355C18D007B5F7D /* SetHomeLinkCommandOptions.swift */; };
 		650A507D218ABAEF0068EC13 /* SoftwareUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A507C218ABAEF0068EC13 /* SoftwareUpdate.swift */; };
 		650A507E218ABAEF0068EC13 /* SoftwareUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A507C218ABAEF0068EC13 /* SoftwareUpdate.swift */; };
 		650A507F218ABAEF0068EC13 /* SoftwareUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A507C218ABAEF0068EC13 /* SoftwareUpdate.swift */; };
@@ -175,6 +176,7 @@
 		4F4E32676B9AA496A9E76FC3 /* Pods-TeslaSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeslaSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeslaSwift/Pods-TeslaSwift.release.xcconfig"; sourceTree = "<group>"; };
 		507DE01A16E7BC28AE46813C /* Pods-TeslaSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeslaSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeslaSwift/Pods-TeslaSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		50BF831C9E3C5642B8EE0D30 /* Pods_TeslaSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeslaSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		598392232355C18D007B5F7D /* SetHomeLinkCommandOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetHomeLinkCommandOptions.swift; sourceTree = "<group>"; };
 		5BA4687B48AE0E48AF1EA4CD /* Pods-TeslaSwiftMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeslaSwiftMac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeslaSwiftMac/Pods-TeslaSwiftMac.debug.xcconfig"; sourceTree = "<group>"; };
 		650A507C218ABAEF0068EC13 /* SoftwareUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftwareUpdate.swift; sourceTree = "<group>"; };
 		65F055172173DB3D00BE3BE5 /* NavigationRequestOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRequestOptions.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 				176F073A2219E25A000877D7 /* RemoteSeatHeaterRequestOptions.swift */,
 				CF1BD59B1DD5070100E4C493 /* RemoteStartDriveCommandOptions.swift */,
 				1787516C221C393700B840DD /* RemoteSteeringWheelHeaterRequestOptions.swift */,
+				598392232355C18D007B5F7D /* SetHomeLinkCommandOptions.swift */,
 				CF1BD5981DD505EF00E4C493 /* SetSunRoofCommandOptions.swift */,
 				CF1BD5951DD5051600E4C493 /* SetTemperatureCommandOptions.swift */,
 				650A507C218ABAEF0068EC13 /* SoftwareUpdate.swift */,
@@ -592,6 +595,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -828,6 +832,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				598392242355C18D007B5F7D /* SetHomeLinkCommandOptions.swift in Sources */,
 				CF0D2F2F1D95A4A900E5A304 /* GenericResponse.swift in Sources */,
 				CFC819A41DBBA2EA00A8E47B /* VehicleViewController.swift in Sources */,
 				CF48FA9B1C8B09C500B1DA93 /* LoginViewController.swift in Sources */,

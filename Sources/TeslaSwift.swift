@@ -50,6 +50,7 @@ public enum VehicleCommand {
 	case speedLimitClearPin(pin: String)
 	case setSeatHeater(seat: HeatedSeat, level: HeatLevel)
 	case setSteeringWheelHeater(on: Bool)
+    case homeLink(lon: Double, lat: Double)
 	
 	func path() -> String {
 		switch self {
@@ -121,6 +122,8 @@ public enum VehicleCommand {
             return "command/remote_seat_heater_request"
         case .setSteeringWheelHeater:
             return "command/remote_steering_wheel_heater_request"
+        case .homeLink:
+            return "command/trigger_homelink"
 		}
 	}
 }
@@ -514,6 +517,9 @@ extension TeslaSwift {
                     return self.request(Endpoint.command(vehicleID: vehicle.id!, command: command), body: body)
                 case let .setSteeringWheelHeater(on):
                     let body = RemoteSteeringWheelHeaterRequestOptions(on: on)
+                    return self.request(Endpoint.command(vehicleID: vehicle.id!, command: command), body: body)
+                case let .homeLink(lon, lat):
+                    let body = SetHomeLinkCommandOptions(lon: lon, lat: lat)
                     return self.request(Endpoint.command(vehicleID: vehicle.id!, command: command), body: body)
 				default:
 					return self.request(Endpoint.command(vehicleID: vehicle.id!, command: command), body: nullBody)
